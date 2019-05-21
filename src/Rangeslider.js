@@ -53,7 +53,8 @@ class Slider extends Component {
     tooltip: true,
     reverse: false,
     labels: {},
-    handleLabel: ""
+    handleLabel: "",
+    tooltip4ever: false
   };
 
   constructor(props, context) {
@@ -301,7 +302,7 @@ class Slider extends Component {
     const coords = this.coordinates(position);
     const fillStyle = { [dimension]: `${coords.fill}px` };
     const handleStyle = { [direction]: `${coords.handle}px` };
-    let showTooltip = (tooltip && active) || tooltip4ever;
+    let showTooltip = (tooltip && active) || (tooltip4ever && active);
 
     let labelItems = [];
     let labelKeys = Object.keys(labels);
